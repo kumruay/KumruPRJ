@@ -4,9 +4,6 @@ import numpy as np
 
 
 
-
-
-
 camera1=cv2.VideoCapture(0)
 camera2=cv2.VideoCapture(1)
 
