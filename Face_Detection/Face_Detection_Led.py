@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import serial
 
-ser = serial.Serial('COM3', 9600)
+ser = serial.Serial('COM3', 9600)  #Yüz'ü tanımladığında yanacak ledi nurada tanımladım.
 
 font=cv2.FONT_HERSHEY_SIMPLEX
 camera1=cv2.VideoCapture(0)
@@ -28,10 +28,10 @@ while True:
 
         cv2.imshow("CAM",frameCombined)
 
-        if (len(body))==0:
+        if (len(body))==0: #Yüzün tanımlanması halinde Arduino'da tanımlı olan "O" kodunu çağırıp ledin yanmasını sağlıyor.
             ser.write("O".encode())
 
-        elif (len(body))==1:
+        elif (len(body))==1: #Yüzün tanımlanması halinde Arduino'da tanımlı olan "C" kodunu çağırıp ledin kapanmasını sağlıyor
             ser.write("C".encode())
 
 

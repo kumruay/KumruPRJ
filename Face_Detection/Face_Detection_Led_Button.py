@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from tkinter import *
 import serial
-from PIL import Image,ImageTk
+from PIL import Image,ImageTk #Pencereyi CV2 ile bağlantısını oluşturabilmek için yükledim ama başarısız oldum.
 
 
 
@@ -19,7 +19,7 @@ camera1=cv2.VideoCapture(0)
 camera2=cv2.VideoCapture(1)
 idn=cv2.createBackgroundSubtractorMOG2()
 
-frame1=Frame(window,width=300,height=200)
+frame1=Frame(window,width=300,height=200)  #Pencerede frame'ler tanımlayıp bu frame'lere cam'leri aktarmaya çaıştım
 frame1.grid(row=0,column=0)
 frame2=Frame(window,width=300,height=200)
 frame2.grid(row=0,column=1)
@@ -27,9 +27,9 @@ frame2.grid(row=0,column=1)
 
 
 
-def button():
+def button():  #Buton tanımlayıp çalışması halınde yapılacak olan işlemi fonksyonda tanımladım
     global  frame1,frame2
-    ret1,frame1=camera1.read()
+    ret1,frame1=camera1.read()  #Pencerede frame'ler tanımlayıp bu frame'lere cam'leri aktarmaya çaıştım
     rer2,frame2=camera2.read()
 
     frameCombined = np.hstack((frame1, frame2))
@@ -45,12 +45,12 @@ def button():
     exit(0)
     window.mainloop()
 
-Button(window,text="Change",command="button").grid(row=1,column=0,padx=600,pady=20)
+Button(window,text="Change",command="button").grid(row=1,column=0,padx=600,pady=20) #Buton tanımlayıp çalışması halınde yapılacak olan işlemi fonksyonda tanımladım
 
 
 while True:
     try:
-        ret1, frame1 = camera1.read()
+        ret1, frame1 = camera1.read()  #Pencerede frame'ler tanımlayıp bu frame'lere cam'leri aktarmaya çaıştım
         ret2, frame2 = camera2.read()
         frameCombined = np.hstack((frame1, frame2))
         grey = cv2.cvtColor(frameCombined, cv2.COLOR_BGR2GRAY)

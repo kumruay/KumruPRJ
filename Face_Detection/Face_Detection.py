@@ -5,11 +5,11 @@ font=cv2.FONT_HERSHEY_SIMPLEX
 camera1=cv2.VideoCapture(0)
 camera2=cv2.VideoCapture(1)
 
-human_detector=cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+human_detector=cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")  #Yüz görüntüsünü algılamak için gerekli datalar.
 
 
 while True:
-    try:
+    try:  #Esas kod.
 
         ret1,frame1=camera1.read()
         ret2,frame2=camera2.read()
@@ -24,7 +24,7 @@ while True:
 
             cv2.imshow("CAM",frameCombined)
 
-    except:
+    except:  #Problem durumunda çağırılacak kod.
 
 
         ret2,frame2=camera2.read()
