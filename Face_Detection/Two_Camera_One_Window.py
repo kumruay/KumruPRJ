@@ -5,7 +5,7 @@ import cv2
 
 #import time
 
-font=cv2.FONT_HERSHEY_SIMPLEX
+font=cv2.FONT_HERSHEY_SIMPLEX  #İki kamera görüntüsünü birleştirmek için kullanılan kod.
 #dtav=0
 
 video_capture_0=cv2.VideoCapture(0)
@@ -20,7 +20,7 @@ while True:
     ret,frame1= video_capture_1.read()
 
     #frame1=cv2.resize(frame1,(320,480))
-    frameCombined=np.hstack((frame0,frame1))
+    frameCombined=np.hstack((frame0,frame1))  #İki cam bir araya getiriliyor
 
     cv2.imshow("Cam",frameCombined)
 
