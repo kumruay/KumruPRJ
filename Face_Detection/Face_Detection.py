@@ -1,5 +1,15 @@
+import sys
+
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QWidget
+from PyQt5.QtGui import QImage
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import QTimer
+
 import cv2
 import numpy as np
+from ui_main_window import *
+
 
 font=cv2.FONT_HERSHEY_SIMPLEX
 camera1=cv2.VideoCapture(0)
