@@ -1,5 +1,6 @@
 import sys
-
+#bu kodda yapmaya çalıştığım, pencereyi ilk açtığımızda image_label kısmına normal yüz tanıma kodunu atamak
+#pushbutton'a tıkladığımızdada bıze çizgili yüz tanıma fonksyonunu çağırmasını sağlamak.
 # import some PyQt5 modules
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QWidget
@@ -12,7 +13,7 @@ import serial
 # import Opencv module
 import cv2
 
-from ui_main_window import *
+from ui_main_window import *  #önceden hazırladığımız dosyayı çağırdık
 font=cv2.FONT_HERSHEY_SIMPLEX
 human_detector=cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
 ser = serial.Serial('COM3', 9600)
@@ -22,18 +23,18 @@ class MainWindow(QWidget):
     def __init__(self):
         # call QWidget constructor
         super().__init__()
-        self.ui = Ui_Form()
+        self.ui = Ui_Form()  # ui_main_window  dosyasındaki Ui_Form fonksyonunu 'ui' olarak buarada tanımladık
         self.ui.setupUi(self)
 
         # create a timer
-        self.timer = QTimer()
+        self.timer = QTimer() #timer in tanımlanması
         # set timer timeout callback function
-        self.timer.timeout.connect(self.viewCam)
+        self.timer.timeout.connect(self.viewCam) #timer in aşağda yazdığımız viewCam fonksyonu ile bağlanması
         # set control_bt callback clicked  function
-        self.ui.control_bt.clicked.connect(self.controlTimer)
+        self.ui.control_bt.clicked.connect(self.controlTimer)#pushbutton'un aşağda yazdığımız controlTimer fonksyonu ile bağlanması
 
     # view camera
-    def viewCam(self):
+    def viewCam(self): # önceden yazdığımız yüz tanıma kodlarını buaraya tekrardan yazdık
         global body,imageCombined,grey
         # read image in BGR format
         ret2, image1 = self.cap1.read()
