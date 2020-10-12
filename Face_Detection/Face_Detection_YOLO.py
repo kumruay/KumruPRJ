@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-
+#YOLO'd 66 tane nesne tanımlı, bu nesnelerden sadece 'person' olanı kullanmasını sağlayacağım
 cap=cv2.VideoCapture(0)
 
 while True:

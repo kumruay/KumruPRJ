@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+#oluşturacağımız arayüzdeki tüm alan tanımlamaları buarada
 class Ui_Form(object):
     def setupUi(self,Form):
         Form.setObjectName("Form")
