@@ -13,9 +13,15 @@ while True:
     frame_blob=cv2.dnn.blobFromImage(frame,1/255,(416,416),swapRB=True,crop=False)
 
     labels=["person","bicycle","car","motorcycle","airplane","bus","train","truck","boat",
-            "trafficlight","firehydrant","stopsign","parkingmeter","bench","bird","cat","dog",
-            "horse","sheep","cow","elephant","bear","zebra","giraffe","backpack","unbrella","handbag",
-            "tie","suitcase","frisbee","skis","snowboard","tennisracket","bottle"]
+         "trafficlight","firehydrant","stopsign","parkingmeter","bench","bird","cat",
+         "dog","horse","sheep","cow","elephant","bear","zebra","giraffe","backpack",
+         "umbrella","handbag","tie","suitcase","frisbee","skis","snowboard","sportsball",
+         "kite","baseballbat","baseballglove","skateboard","surfboard","tennisracket",
+         "bottle","wineglass","cup","fork","knife","spoon","bowl","banana","apple",
+         "sandwich","orange","broccoli","carrot","hotdog","pizza","donut","cake","chair",
+         "sofa","pottedplant","bed","diningtable","toilet","tvmonitor","laptop","mouse",
+         "remote","keyboard","cellphone","microwave","oven","toaster","sink","refrigerator",
+         "book","clock","vase","scissors","teddybear","hairdrier","toothbrush"]
 
     colors=["0,255,255","0,0,255","255,0,0","255,255,0","0,255,0"]
     colors=[np.array(color.split(",")).astype("int")for color in colors]
